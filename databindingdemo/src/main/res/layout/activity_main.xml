@@ -55,6 +55,18 @@
             app:layout_constraintStart_toStartOf="@+id/text_view_1"
             app:layout_constraintTop_toBottomOf="@+id/text_view_1" />
 
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@={userViewModel.firstName}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
