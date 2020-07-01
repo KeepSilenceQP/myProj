@@ -16,6 +16,10 @@
         <variable
             name="hiStr"
             type="java.lang.String" />
+
+        <variable
+            name="counter"
+            type="java.lang.Integer" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,12 +38,22 @@
 <!--            app:layout_constraintStart_toStartOf="parent"-->
 <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
+<!--        <Button-->
+<!--            android:id="@+id/button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Button"-->
+<!--            android:onClick="@{() -> listeners.onButtonClick()}"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/text_view_1"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Button"
-            android:onClick="@{() -> listeners.onButtonClick()}"
             app:layout_constraintBottom_toTopOf="@+id/text_view_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -110,6 +124,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_view_2" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="88dp"
+            android:layout_height="66dp"
+            android:background="#A60909"
+            android:gravity="center"
+            android:padding="0px"
+            android:text="@{String.valueOf(counter), default=Counter}"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

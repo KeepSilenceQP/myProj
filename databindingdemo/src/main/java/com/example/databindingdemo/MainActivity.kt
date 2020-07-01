@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
         dataBinding.listeners = Listeners(userVM)
         dataBinding.hiStr = "little brother!"
 
+//        dataBinding.counter = userVM.counter
+
+        dataBinding.counter = 0
+
 //        dataBinding.button.setOnClickListener {
 //            if (userVM.firstName.get().isNullOrEmpty() || userVM.lastName.get().isNullOrEmpty()
 //                    || userVM.firstName.get().equals("long") || userVM.lastName.get().equals("click")) {
@@ -28,6 +32,13 @@ class MainActivity : AppCompatActivity() {
 //                userVM.lastName.set("peng")
 //            }
 //        }
+
+        dataBinding.button.setOnClickListener {
+//            userVM.counter = userVM.counter.plus(1)
+//            dataBinding.counter = userVM.counter
+            var i : Int = dataBinding.counter as Int
+            dataBinding.counter = i.plus(1)
+        }
 
         // kotlin support.
         button.setOnLongClickListener {
