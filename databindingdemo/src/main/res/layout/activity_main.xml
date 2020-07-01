@@ -3,10 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- 绑定的数据 -->
+    <data>
+        <variable
+            name="userViewModel"
+            type="com.example.databindingdemo.UserViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_view_1"
@@ -14,7 +31,7 @@
             android:layout_height="wrap_content"
             android:background="#8BC34A"
             android:gravity="center"
-            android:text="@{user.firstName}"
+            android:text="@{userViewModel.firstName}"
             android:textColor="#FF5722"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -25,11 +42,12 @@
 
         <TextView
             android:id="@+id/text_view_2"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
+            android:background="#44519A"
             android:gravity="center"
-            android:text="@{user.lastName}"
+            android:text="@{userViewModel.lastName}"
             android:textColor="#00BCD4"
             android:textSize="16sp"
             android:textStyle="italic"
@@ -38,13 +56,5 @@
             app:layout_constraintTop_toBottomOf="@+id/text_view_1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!-- 绑定的数据 -->
-    <data>
-
-        <variable
-            name="user"
-            type="com.example.databindingdemo.User" />
-    </data>
 
 </layout>
