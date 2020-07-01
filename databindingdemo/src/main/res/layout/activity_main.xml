@@ -8,6 +8,14 @@
         <variable
             name="userViewModel"
             type="com.example.databindingdemo.UserViewModel" />
+
+        <variable
+            name="listeners"
+            type="com.example.databindingdemo.MainActivity.Listeners" />
+
+        <variable
+            name="hiStr"
+            type="java.lang.String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,11 +23,23 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+<!--        <Button-->
+<!--            android:id="@+id/button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Button"-->
+<!--            android:onClick="@{listeners.onButtonClick}"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/text_view_1"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Button"
+            android:onClick="@{() -> listeners.onButtonClick()}"
             app:layout_constraintBottom_toTopOf="@+id/text_view_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,13 +75,37 @@
             app:layout_constraintStart_toStartOf="@+id/text_view_1"
             app:layout_constraintTop_toBottomOf="@+id/text_view_1" />
 
+<!--        <EditText-->
+<!--            android:id="@+id/editTextTextPersonName2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:text="@={userViewModel.firstName}"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/text_view_2" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/editTextTextPersonName2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:afterTextChanged="@{listeners.afterEditTxtChanged}"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/text_view_2" />-->
+
         <EditText
             android:id="@+id/editTextTextPersonName2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@={userViewModel.firstName}"
+            android:afterTextChanged="@{e -> listeners.afterEditTxtChanged(e, hiStr)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
