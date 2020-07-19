@@ -1,2 +1,10 @@
+println "in myProj settings.gradle!!! test gradle object."
+
+println gradle.hashCode()
+println gradle.gradleHomeDir
+println gradle.gradleUserHomeDir
+println gradle.gradleVersion
+println gradle.parent
+
 include ':app'
 include ':databindingdemo'
